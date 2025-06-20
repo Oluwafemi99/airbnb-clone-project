@@ -32,4 +32,77 @@ Docker - is an open-source platform designed to help developers build, ship, and
 Github-actions -  is a CI/CD (Continuous Integration and Continuous Deployment) tool built directly into GitHub. It allows you to automate workflows such as building, testing, and deploying your code whenever changes are pushed to your repository.
 
 GraphQL - is a query language and runtime for APIs developed by Facebook in 2012 and released as open-source in 2015. It provides a more efficient, powerful, and flexible alternative to REST for building APIs
- 
+
+
+
+Database Design
+Key entities are
+Users
+the user entity has different fields which are username, email, name etc.
+
+Properties.
+the properties entity has feilds like address, type of propeties, price, image, foreign key to User
+
+Bookings.
+bookings has feilds like date, foreign key to user, foreign key to properties.
+
+Reviews.
+Reviews has fields like ratings, date, foreign key to user, foriegn key to properties
+
+Payments
+has the fields like amount, date, foreign key to user, foriegn key to bookings 
+
+
+Feature Breakdown
+
+User Management
+Users can register, log in, and manage their profiles securely. Authentication ensures that only authorized users can access personal data or perform actions like booking and property listing.
+
+Property Management
+Hosts can list properties by providing details such as title, description, location, price, and images. Listings are stored and displayed to potential guests through a searchable interface.
+
+Booking System
+Users can view available properties and make reservations for specific dates. The system ensures that bookings do not overlap and confirms reservations with pricing details.
+
+Search and Filtering
+Users can search for properties by location, date, price range, and number of guests. Filters help users find suitable options quickly, improving the browsing experience.
+
+Image Upload and Gallery
+Hosts can upload images for each property to give guests a visual idea of the accommodation. A gallery view enhances property presentation and user engagement.
+
+Review and Rating System
+Guests can leave reviews and ratings after their stay, helping future users make informed decisions. Hosts can also respond to feedback, fostering trust and transparency.
+
+Dashboard and User Interface
+Both hosts and guests have access to personalized dashboards showing their listings, bookings, and reviews. This feature improves user experience and keeps all relevant information organized.
+
+Notification System
+The system provides email or in-app notifications for key actions such as booking confirmations, cancellations, and review updates. This ensures timely communication between users and the platform
+
+API Security
+
+Authentication
+We implement secure authentication using JWT (JSON Web Tokens) or session-based tokens to verify the identity of users. This ensures that only legitimate users can access their accounts and interact with the system.
+
+Authorization
+Role-based access control is enforced to ensure users can only perform actions they’re permitted to (e.g., only hosts can list properties, only guests can book). Endpoints are protected to restrict access based on user roles.
+
+Rate Limiting
+API rate limiting is implemented to prevent abuse, spam, and brute-force attacks by restricting the number of requests from a single IP or user within a given time frame.
+
+Data Validation & Sanitization
+All user inputs are validated and sanitized to prevent injection attacks such as SQL injection and cross-site scripting (XSS).
+
+HTTPS & Secure Headers
+All API communication is secured over HTTPS, and secure HTTP headers (e.g., Content-Security-Policy, X-Content-Type-Options) are configured.
+
+CI/CD Pipeline
+
+CI/CD (Continuous Integration and Continuous Deployment) pipelines are automated workflows that streamline the process of building, testing, and deploying code changes. Continuous Integration ensures that code changes are automatically tested and merged into the main branch, while Continuous Deployment ensures that successful changes are automatically deployed to production or staging environments.
+
+Importance
+CI/CD pipelines help maintain code quality, reduce human error, speed up development cycles, and ensure consistent deployments. They are essential for efficient collaboration, especially in projects with multiple contributors.
+
+GitHub Actions – Automates testing, linting, and deployment workflows on each push or pull request.
+
+Docker – Packages the application into containers to ensure consistency across development, testing, and production environments.
