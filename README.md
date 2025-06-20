@@ -35,7 +35,6 @@ GraphQL - is a query language and runtime for APIs developed by Facebook in 2012
 
 
 
-Database Design
 The Airbnb Clone project relies on a well-structured relational database to manage users, properties, bookings, reviews, and payments. Below are the key entities and their relationships:
 
 Users
