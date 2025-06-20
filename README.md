@@ -36,21 +36,76 @@ GraphQL - is a query language and runtime for APIs developed by Facebook in 2012
 
 
 Database Design
-Key entities are
+The Airbnb Clone project relies on a well-structured relational database to manage users, properties, bookings, reviews, and payments. Below are the key entities and their relationships:
+
 Users
-the user entity has different fields which are username, email, name etc.
+Represents both hosts and guests.
 
-Properties.
-the properties entity has feilds like address, type of propeties, price, image, foreign key to User
+id: Unique identifier for each user
 
-Bookings.
-bookings has feilds like date, foreign key to user, foreign key to properties.
+name: Full name of the user
 
-Reviews.
-Reviews has fields like ratings, date, foreign key to user, foriegn key to properties
+email: Email address (used for login)
+
+password: Hashed password for authentication
+
+role: Defines if the user is a guest, host, or admin
+
+Relationships:
+
+A user can list multiple properties
+
+A user can make multiple bookings
+
+A user can leave multiple reviews
+
+Properties
+
+Represents a property listed by a host.
+id: Unique identifier for each property
+title: Name of the property
+description: Detailed description
+ocation: City or region where the property is located
+price_per_night: Cost per night of stay
+Relationships:
+Each property belongs to one user (host)
+A property can have many bookings and reviews
+
+Bookings
+
+Represents a reservation made by a guest.
+id: Unique identifier for each booking
+user_id: Reference to the guest who made the booking
+property_id: Reference to the booked property
+start_date: Start date of the reservation
+end_date: End date of the reservation
+Relationships:
+Each booking is made by one user
+Each booking is for one property
+
+Reviews
+
+Represents feedback left by guests after their stay.
+id: Unique identifier for each review
+user_id: Reviewer (guest)
+property_id: Reviewed property
+rating: Numeric rating (e.g., 1–5)
+comment: Optional text review
+Relationships:
+A user can review many properties
+A property can have multiple reviews
 
 Payments
-has the fields like amount, date, foreign key to user, foriegn key to bookings 
+
+Represents a completed payment transaction.
+id: Unique identifier for each payment
+booking_id: Reference to the associated booking
+user_id: Payer (usually the guest)
+amount: Total amount paid
+status: Payment status (e.g., completed, failed)
+Relationships:
+Each payment is tied to one booking
+Each booking has one corresponding paymen
 
 
 Feature Breakdown
