@@ -34,6 +34,7 @@ Github-actions -  is a CI/CD (Continuous Integration and Continuous Deployment) 
 GraphQL - is a query language and runtime for APIs developed by Facebook in 2012 and released as open-source in 2015. It provides a more efficient, powerful, and flexible alternative to REST for building APIs
 
 
+Database Design.
 
 The Airbnb Clone project relies on a well-structured relational database to manage users, properties, bookings, reviews, and payments. Below are the key entities and their relationships:
 
